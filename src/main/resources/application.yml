@@ -1,0 +1,15 @@
+server:
+  port: 9090
+  # 配置springboot项目访问的前缀
+  servlet:
+    context-path: /${spring.application.name}/
+
+spring:
+  application:
+    name: framework
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  profiles:
+    active: dev
