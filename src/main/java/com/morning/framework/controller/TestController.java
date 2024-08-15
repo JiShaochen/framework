@@ -1,6 +1,8 @@
 package com.morning.framework.controller;
 
 import com.morning.framework.common.Result;
+import com.morning.framework.common.anno.NotRequired;
+import com.morning.framework.common.dto.ThreadLocalUser;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +21,14 @@ public class TestController {
     private String demo;
 
     @GetMapping
-    public Result test() {
-        return Result.success(demo);
+    @NotRequired
+    public Result<String> test() {
+        return Result.success(ThreadLocalUser.getUser());
+    }
+
+    @GetMapping(value = "/test")
+    public Result<String> test2() {
+        return Result.success(ThreadLocalUser.getUser());
     }
 
 }
