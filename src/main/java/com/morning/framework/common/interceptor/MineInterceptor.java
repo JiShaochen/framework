@@ -1,20 +1,14 @@
 package com.morning.framework.common.interceptor;
 
-import cn.hutool.jwt.JWT;
-import cn.hutool.jwt.JWTUtil;
 import com.alibaba.fastjson2.JSON;
 import com.morning.framework.common.anno.NotRequired;
-import com.morning.framework.common.dto.ThreadLocalUser;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.MethodParameter;
 import org.springframework.util.StringUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Objects;
 
